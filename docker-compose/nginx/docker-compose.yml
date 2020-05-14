@@ -1,0 +1,15 @@
+version: '3'
+services:
+  nginx:
+    image: nginx
+    ports:
+      - "23306:3306"
+    environment:
+      MYSQL_DATABASE: "smc_user"
+      MYSQL_ROOT_PASSWORD: "just4mysql"
+      MYSQL_ROOT_HOST: "%"
+      TZ: Asia/Shanghai
+    volumes:
+      - /Users/lauro/Documents/Workspace/git/smc/volumes/user:/var/lib/mysql
+    restart: always
+    container_name: docker_smc_user

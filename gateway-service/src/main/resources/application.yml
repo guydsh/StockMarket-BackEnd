@@ -1,0 +1,9 @@
+server:
+  port: 8080
+
+ribbon:
+  ReadTimeout: 60000
+
+spring:
+  profiles:
+    active: local

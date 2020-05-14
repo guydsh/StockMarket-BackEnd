@@ -1,0 +1,14 @@
+version: '3'
+services:
+  stock-exchange-service:
+    image: stock-exchange-service
+    container_name: stock-exchange-service
+    ports:
+      - "8082:8082"
+    restart: always
+    networks:
+      - network-smc
+
+networks:
+  network-smc:
+    external: true

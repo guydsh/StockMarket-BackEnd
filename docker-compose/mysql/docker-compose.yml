@@ -1,0 +1,20 @@
+version: '3'
+services:
+  mysql:
+    image: mysql/mysql-server:latest
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: "just4mysql"
+      MYSQL_ROOT_HOST: "%"
+      TZ: Asia/Shanghai
+    volumes:
+      - /Users/lauro/Documents/Workspace/git/smc/volumes/mysql-db:/var/lib/mysql
+    restart: always
+    container_name: mysql-service
+    networks:
+      - network-smc
+
+networks:
+  network-smc:
+    external: true

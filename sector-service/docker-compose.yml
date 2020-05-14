@@ -1,0 +1,14 @@
+version: '3'
+services:
+  sector-service:
+    image: sector-service
+    container_name: sector-service
+    ports:
+      - "8084:8084"
+    restart: always
+    networks:
+      - network-smc
+
+networks:
+  network-smc:
+    external: true

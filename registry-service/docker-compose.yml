@@ -1,0 +1,14 @@
+version: '3'
+services:
+  registry-service:
+    image: registry-service
+    container_name: registry-service
+    ports:
+      - "8761:8761"
+    restart: always
+    networks:
+      - network-smc
+
+networks:
+  network-smc:
+    external: true

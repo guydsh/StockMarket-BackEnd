@@ -1,0 +1,17 @@
+eureka:
+  instance:
+    hostname: stock-exchange-service
+  client:
+    serviceUrl:
+      defaultZone: http://registry-service:8761/eureka/
+
+spring:
+  jpa:
+    database: mysql
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+  datasource:
+    url: jdbc:mysql://mysql-service:3306/smc_stock_exchange
+    username: root
+    password: just4mysql

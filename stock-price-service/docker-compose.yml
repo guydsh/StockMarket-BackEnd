@@ -1,0 +1,14 @@
+version: '3'
+services:
+  stock-price-service:
+    image: stock-price-service
+    container_name: stock-price-service
+    ports:
+      - "8085:8085"
+    restart: always
+    networks:
+      - network-smc
+
+networks:
+  network-smc:
+    external: true

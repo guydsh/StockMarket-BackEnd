@@ -1,0 +1,14 @@
+version: '3'
+services:
+  company-service:
+    image: company-service
+    container_name: company-service
+    ports:
+      - "8083:8083"
+    restart: always
+    networks:
+      - network-smc
+
+networks:
+  network-smc:
+    external: true

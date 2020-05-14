@@ -1,0 +1,68 @@
+version: '3'
+services:
+  registry-service:
+    image: registry-service
+    container_name: registry-service
+    ports:
+      - "8761:8761"
+    restart: always
+    networks:
+      - network-smc
+
+  gateway-service:
+    image: gateway-service
+    container_name: gateway-service
+    ports:
+      - "8080:8080"
+    restart: always
+    networks:
+      - network-smc
+
+  user-service:
+    image: user-service
+    container_name: user-service
+    ports:
+      - "8081:8081"
+    restart: always
+    networks:
+      - network-smc
+
+  stock-exchange-service:
+    image: stock-exchange-service
+    container_name: stock-exchange-service
+    ports:
+      - "8082:8082"
+    restart: always
+    networks:
+      - network-smc
+
+  company-service:
+    image: company-service
+    container_name: company-service
+    ports:
+      - "8083:8083"
+    restart: always
+    networks:
+      - network-smc
+
+  sector-service:
+    image: sector-service
+    container_name: sector-service
+    ports:
+      - "8084:8084"
+    restart: always
+    networks:
+      - network-smc
+
+  stock-price-service:
+    image: stock-price-service
+    container_name: stock-price-service
+    ports:
+      - "8085:8085"
+    restart: always
+    networks:
+      - network-smc
+
+networks:
+  network-smc:
+    external: true
